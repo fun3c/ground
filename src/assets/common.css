@@ -1,0 +1,36 @@
+.flexBox {
+  width: 715px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.flexBox .head {
+  width: 715px;
+  height: 135px;
+  margin: 0 auto;
+  text-align: center;
+  background: url('./part-2-t.jpg') no-repeat;
+  background-size: 100% 100%;
+}
+.flexBox .title {
+  font-size: 34px;
+  color: #fff;
+  padding-top: 24px;
+}
+.flexBox .content {
+  width: 715px;
+  min-height: 100px;
+  margin: 0 auto;
+  background: url('./part-2-m.jpg') repeat-y;
+  background-size: 100% 100%;
+  margin-top: -1px;
+}
+.flexBox .foot {
+  width: 715px;
+  height: 68px;
+  margin: 0 auto;
+  background: url('./part-2-b.jpg') no-repeat;
+  background-size: 100% 100%;
+  margin-top: -1px;
+}
