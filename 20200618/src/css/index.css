@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  max-width: 16rem;
+  height: 100%;
+  background-color: #3517C9;
+  color: #fff;
+  font-size: 24px; }
+
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto; }
+
+.top {
+  width: 100%;
+  height: 23.21067rem;
+  background: url("../img/part1.jpg") no-repeat;
+  background-size: 100% auto; }
+
+.top .form-warper {
+  width: 100%;
+  padding-top: 15.31733rem; }
+
+.top .form-warper .form-item {
+  width: 13.61067rem;
+  margin: 0.64rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.top .form-warper .form-item input {
+  width: 100%;
+  height: 1.70667rem;
+  border: 0;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 24px;
+  padding: 0.21333rem 0.21333rem; }
+
+.top .form-warper .form-item:nth-child(2) input {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; }
+
+.top .form-warper .form-item .get-code {
+  width: 4.69333rem;
+  padding: 0 0.42667rem;
+  font-size: 24px;
+  color: #4858DC;
+  height: 2.13333rem;
+  line-height: 2.13333rem;
+  background-color: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px; }
+
+.top .form-warper .btn-sbumit {
+  display: block;
+  width: 14.42133rem;
+  height: 2.432rem;
+  margin: 0 auto;
+  border: 0;
+  background: none; }
+
+.bottom {
+  width: 100%;
+  margin-top: 2.56rem;
+  background: url("../img/botmbg.png") no-repeat left 3.41333rem;
+  background-size: 100%; }
+
+.bottom .head {
+  width: 13.61067rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.bottom .head > :nth-child(1),
+.bottom .head > :nth-child(3) {
+  width: 1.77493rem;
+  height: 1.18187rem; }
+
+.bottom .head > :nth-child(2) {
+  width: 6.0416rem;
+  text-align: center;
+  font-size: 0.98133rem;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5); }
+
+.bottom .detial {
+  width: 13.824rem;
+  margin: 0.85333rem auto;
+  background: #250D9B 100%;
+  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  color: #efefef; }
+
+.bottom .detial ol {
+  padding: 0.64rem; }
+
+.bottom .detial ol li {
+  padding: 0.21333rem;
+  margin-left: 0.34133rem; }
+
+.bottom .detial p {
+  padding: 0 0.512rem 0.85333rem; }

@@ -1,0 +1,12 @@
+@import 'px2rem.scss';
+
+@function px2rem($px) {
+    @return $px*320/$designWidth/20+rem;
+}
+$designWidth : 750;
+
+#app {
+    background-color: red;
+    width: px2rem(500);
+    font-size: px2rem(44);
+}
