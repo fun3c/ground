@@ -35,25 +35,23 @@ body {
   width: 100%;
   height: 1.70667rem;
   border: 0;
-  border-radius: 5px;
+  border-radius: 0.128rem;
   background-color: #fff;
-  font-size: 24px;
-  padding: 0.21333rem 0.21333rem; }
+  font-size: 0.512rem;
+  padding: 0.21333rem 0.21333rem;
+  outline: none; }
 
-.top .form-warper .form-item:nth-child(2) input {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px; }
+.top .form-warper .form-subitem {
+  border-radius: 0.128rem;
+  background-color: #fff; }
 
-.top .form-warper .form-item .get-code {
-  width: 4.69333rem;
+.top .form-warper .form-subitem .get-code {
+  width: 4.26667rem;
   padding: 0 0.42667rem;
-  font-size: 24px;
+  font-size: 0.512rem;
   color: #4858DC;
-  height: 2.13333rem;
-  line-height: 2.13333rem;
-  background-color: #fff;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px; }
+  height: 2.13329rem;
+  line-height: 2.13333rem; }
 
 .top .form-warper .btn-sbumit {
   display: block;
@@ -92,6 +90,7 @@ body {
 .bottom .detial {
   width: 13.824rem;
   margin: 0.85333rem auto;
+  font-size: 0.512rem;
   background: #250D9B 100%;
   box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.5);
   border-radius: 5px;
