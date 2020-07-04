@@ -9,7 +9,7 @@ $(function() {
     
     // 登录，用户信息
     function showLogin() {
-      if (isLogin) {
+      if (isLogin == 1) {
         $(".user").html(
           '<span class="user-icon"></span> <span class="user-phone"></span>'
         );
