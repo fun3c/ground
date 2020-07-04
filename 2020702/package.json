@@ -9,7 +9,7 @@
     "start": "npm run scss & npm run dev",
     "build:js": "node_modules/uglify-js/bin/uglifyjs ./dist/js/index.js -m -c -o ./dist/js/index.min.js",
     "build:css": "node_modules/postcss-cli/bin/postcss ./dist/css/index.css > ./dist/css/index.min.css",
-    "build": "npm run copy & npm run build:js & npm run build:css & npm run repe",
+    "build": "rm -rf dist & npm run copy",
     "copy": "node script/copy.js",
     "repe": "node script/replace.js",
     "test": "echo \"Error: no test specified\" && exit 1"

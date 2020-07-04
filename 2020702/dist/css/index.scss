@@ -50,6 +50,16 @@ body {
         &-phone {
             color: #fff;
         }
+        .login {
+            display: inline-block;
+            width: px2rem(50);
+            height: px2rem(24);
+            line-height: px2rem(24);
+            background-color: #FF6037;
+            text-align: center;
+            color: #fff;
+            border-radius: px2rem(4);
+        }
     }
     
     .jp-title {
@@ -98,10 +108,10 @@ body {
         }
         #result {
             height: 100%;
-            line-height: px2rem(200);
+            line-height: px2rem(180);
             display: block;
             font-size: px2rem(20);
-            color: #000;
+            color: #545454;
             background   : #fff;
             text-align: center;
         }
@@ -116,7 +126,7 @@ body {
             width: 50%;
             text-align: center;
             position: absolute;
-            bottom: px2rem(60);
+            bottom: px2rem(70);
             z-index: 23;
             transform: translate(50%, 50%);
             color: #9C9C9C;
@@ -126,7 +136,7 @@ body {
             width     : 50%;
             text-align: center;
             position  : absolute;
-            bottom    : px2rem(35);
+            bottom    : px2rem(40);
             z-index   : 23;
             transform : translate(50%, 50%);
             color     : #9C9C9C;
@@ -140,7 +150,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: px2rem(30) auto;
+    margin: px2rem(20) auto;
    > button {
        display: inline-block;
        border: none;
@@ -153,7 +163,8 @@ body {
        margin-right: px2rem(10);
    }
 }
-.modal {
+.modal,
+.modal2 {
     width: 100%;
     height: 100%;
     position: fixed;
@@ -171,8 +182,6 @@ body {
         margin          : px2rem(200) auto;
         width           : px2rem(324);
         height          : px2rem(100);
-        // background-color: red;
-        
     }
     .close {
         width: px2rem(30);
@@ -207,11 +216,47 @@ body {
         }
     }
     &-body {
-        min-height: px2rem(200);
+        min-height: px2rem(180);
         background-color: #fff;
         border-bottom-left-radius: px2rem(4);
         border-bottom-right-radius: px2rem(4);
-        color: #000;
+        color: #666;
         padding: px2rem(20);
+        line-height: px2rem(22);
+        font-size: px2rem(14);
+        .tips {
+            text-align: center;
+            padding-top: px2rem(70);
+        }
+        > p {
+            padding: px2rem(5);
+        }
+        .login-box {
+            width: 80%;
+            margin: 0 auto;
+
+            .login-btn {
+                width: 100%;
+                height: px2rem(32);
+                line-height: px2rem(32);
+                border-radius: px2rem(5);
+                text-align: center;
+                background-color: #FF6037;
+                color: #fff;
+                margin: px2rem(20) 0;
+            }
+            .agree {
+                margin: px2rem(20) 0;
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+.modal2 {
+    .modal-body {
+        border-radius: px2rem(5);
+        min-height: px2rem(100);
     }
 }
