@@ -37,7 +37,7 @@ $(function() {
               $(".user-phone").text(phoneNumber);
               $(".modal2").fadeOut();
               eraser();
-            //   complete().then(eraser);
+              $(".center").find(".box").off("touchmove", isLoginHandle);
             }
         });
     });
@@ -65,10 +65,9 @@ $(function() {
             //大于擦除面积比例触发函数
             completeFunction: function() {
                 if (count > 0) {
-                     $("#reset").show();
-                    // complete().then(function() {
-                    //     $("#reset").show();
-                    // })
+                    complete().then(function() {
+                        $("#reset").show();
+                    })
                 }
             },
         });
