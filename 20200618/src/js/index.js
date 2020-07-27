@@ -74,9 +74,9 @@ $(function() {
     var time = {
         isNot: false,
         countTimer: 0, 
-        countDown(t) {
+        countDown: function(t) {
         this.isNot = true;
-        this.countTimer = setInterval(() => {
+        this.countTimer = setInterval(function(){
             t--;
             if (t <= 0) {
             this.clearCountTimer();
@@ -85,7 +85,7 @@ $(function() {
             }
         }, 1000);
         },
-        clearCountTimer() {
+        clearCountTimer: function() {
             this.isNot = false;
             clearInterval(this.countTimer);
             $getCode.text("获取验证码");
@@ -100,7 +100,7 @@ $(function() {
       },
       hide: function (el, msg) {
         this.timer && clearInterval(this.timer);
-        this.timer = setInterval(() => {
+        this.timer = setInterval(function (){
           $(el).fadeOut(200, function () {
             $(this).text(msg);
           });
@@ -124,6 +124,9 @@ $(function() {
           console.log("res", res);
           if (res.code === 200) {
             time.countDown(60);
+            var data = res.data;
+            $('#x').text(data.X + '元');
+            $("#y").text(data.Y + "元");
           } else {
             message.show(msgPuop, res.msg);
           }
