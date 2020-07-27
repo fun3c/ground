@@ -12,10 +12,10 @@
         <div class="top">
             <div class="form-warper">
                 <div class="form-item">
-                    <input type="text" placeholder="请输入领取的手机号" />
+                    <input id="phone-number" type="number" placeholder="请输入领取的手机号" />
                 </div>
                 <div class="form-item form-subitem">
-                    <input type="text" placeholder="请输入验证码" />
+                    <input type="text" id="vef-code" placeholder="请输入验证码" />
                     <span class="get-code">发送验证码</span>
                 </div>
                 <button class="btn-sbumit"><img src="./src/img/btn.png" width="100%" /></button>
@@ -39,7 +39,29 @@
                 <p>此方案为低消方案。客户整月停机，有最低消费承诺，详情请咨询10086。</p>
             </div>
         </div>
+        <div id="msg-puop"></div>
     </div>
+
+    <div class="modal">
+        <div class="modal-wrapper">
+            <div class="close">
+                <div class="close-btn"></div>
+            </div>
+            <div class="modal-head">
+                <span class="title">全网普惠送权益</span>
+            </div>
+            <div class="modal-body">
+                <p>根据你近期的消费：<span>x元</span></p>
+                <p>在此基础上每月加<span>20元</span>即可享</p>
+                <p>AG通用流量+视频会员+30G定向流量</p>
+                <p>活动持续有效期：<span>12个月</span></p>
+                <p>视频包括：腾讯、优酷、爱奇艺、芒果等</p>
+
+                <p class="foot"><button id="confirm">确定</button></p>
+            </div>
+        </div>
+    </div>
+
     <script src="./src/js/jquery-3.5.1.min.js"></script>
     <script src="./src/js/index.js"></script>
 </body>

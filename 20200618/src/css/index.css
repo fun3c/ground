@@ -14,6 +14,25 @@ body {
   height: 100%;
   margin: 0 auto; }
 
+#msg-puop {
+  width: 60%;
+  height: 2.13333rem;
+  font-size: 0.59733rem;
+  font-variant: tabular-nums;
+  line-height: 2.13333rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1010;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.17067rem;
+  display: none; }
+
 .top {
   width: 100%;
   height: 23.21067rem;
@@ -46,12 +65,13 @@ body {
   background-color: #fff; }
 
 .top .form-warper .form-subitem .get-code {
-  width: 4.26667rem;
+  width: 5.12rem;
   padding: 0 0.42667rem;
   font-size: 0.512rem;
   color: #4858DC;
   height: 2.13329rem;
-  line-height: 2.13333rem; }
+  line-height: 2.13333rem;
+  text-align: center; }
 
 .top .form-warper .btn-sbumit {
   display: block;
@@ -59,7 +79,8 @@ body {
   height: 2.432rem;
   margin: 0 auto;
   border: 0;
-  background: none; }
+  background: none;
+  outline: none; }
 
 .bottom {
   width: 100%;
@@ -105,3 +126,87 @@ body {
 
 .bottom .detial p {
   padding: 0 0.512rem 0.85333rem; }
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; }
+
+.modal-wrapper {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: 8.53333rem auto;
+  width: 13.824rem;
+  height: 4.26667rem; }
+
+.modal .close {
+  width: 1.28rem;
+  position: absolute;
+  top: 0.21333rem;
+  right: 0.21333rem; }
+
+.modal .close-btn {
+  width: inherit;
+  height: 1.28rem;
+  background: url("../img/close-btn.svg") no-repeat;
+  background-size: 100%; }
+
+.modal .close-line {
+  width: 1px;
+  height: 3.84rem;
+  background-color: #fff;
+  position: absolute;
+  left: 50%; }
+
+.modal-head {
+  height: 1.70667rem;
+  background-color: #3517C9;
+  border-top-left-radius: 0.17067rem;
+  border-top-right-radius: 0.17067rem; }
+
+.modal-head .title {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.70667rem;
+  font-size: 0.85333rem; }
+
+.modal-body {
+  min-height: 7.68rem;
+  background-color: #fff;
+  border-bottom-left-radius: 0.17067rem;
+  border-bottom-right-radius: 0.17067rem;
+  color: #666;
+  padding: 0.85333rem 0.85333rem 0.42667rem 0.85333rem;
+  line-height: 0.93867rem;
+  font-size: 0.59733rem; }
+
+.modal-body > p {
+  padding: 0.21333rem; }
+
+.modal-body > p > span {
+  color: #444;
+  font-weight: bold; }
+
+.modal-body .foot {
+  margin-top: 0.42667rem;
+  text-align: right; }
+
+.modal-body .foot > button {
+  border: 0;
+  outline: none;
+  display: inline-block;
+  width: 3.41333rem;
+  height: 1.36533rem;
+  color: #fff;
+  background-color: #3517C9;
+  font-size: 0.59733rem;
+  border-radius: 0.17067rem; }
