@@ -8,6 +8,7 @@ $(function() {
     var $modal = $(".modal"); // 弹层
     var $closeModal = $(".modal").find(".close"); // 关闭弹层按钮
     var $confirm = $("#confirm");
+    var codeResult = {X: 0, y: 0};
 
 
     var getQuery = function(variable) {
@@ -119,23 +120,20 @@ $(function() {
         type: "post",
         url: reqUrl + "/api/dq/bjph/sendCode",
         data: req,
-        dataType: "dataType",
-        success: function (res) {
+      }).done(function (res) {
           console.log("res", res);
           if (res.code === 200) {
             time.countDown(60);
-            var data = res.data;
-            $('#x').text(data.X + '元');
-            $("#y").text(data.Y + "元");
+            codeResult = res.data;
+            message.show(msgPuop, "验证码已下发");
           } else {
             message.show(msgPuop, res.msg);
           }
-        },
-        error: function (err) {
+        }).fail(function (err) {
           var res = JSON.parse(err.responseText);
+          console.log("err", res);
           message.show(msgPuop, res.msg);
-        },
-      });
+        });
     });
 
     // 校验输入
@@ -150,7 +148,10 @@ $(function() {
       ]);
 
       if (validator.check()) {
-        $modal.fadeIn(300);
+        $modal.fadeIn(300, function () {
+          $("#x").text((codeResult.X || 'x') + "元");
+          $("#y").text((codeResult.Y || 'y') + "元");
+        });
       }
     });
     // 提交数据
@@ -165,10 +166,10 @@ $(function() {
         type: "post",
         url: reqUrl + "/api/dq/bjph/saveOrders",
         data: req,
-        dataType: "dataType",
         success: function (res) {
           console.log("res", res);
-          message.show(msgPuop, res.msg);
+          var msg = res.code === 200 ? '订购成功！会员权益请在北京移动APP内领取' : res.msg;
+          message.show(msgPuop, msg);
         },
         error: function (err) {
           var res = JSON.parse(err.responseText);
