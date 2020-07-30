@@ -37,7 +37,17 @@ body {
   width: 100%;
   height: 23.21067rem;
   background: url("../img/part1.jpg") no-repeat;
-  background-size: 100% auto; }
+  background-size: 100% auto;
+  position: relative; }
+
+.top .head {
+  position: absolute;
+  left: 0.42667rem;
+  top: 0.42667rem; }
+
+.top .head img {
+  max-width: 100%;
+  height: auto; }
 
 .top .form-warper {
   width: 100%;
@@ -109,7 +119,7 @@ body {
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5); }
 
 .bottom .detial {
-  width: 13.824rem;
+  width: 14.25067rem;
   margin: 0.85333rem auto;
   font-size: 0.512rem;
   background: #250D9B 100%;
@@ -126,6 +136,45 @@ body {
 
 .bottom .detial p {
   padding: 0 0.512rem 0.85333rem; }
+
+.bottom .detial .table {
+  width: 100%;
+  text-align: left;
+  border-radius: 2px 2px 0 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 0.42667rem;
+  color: #eee; }
+
+.bottom .detial .table tr {
+  display: table-row; }
+
+.bottom .detial .table tr:last-child td {
+  border-bottom: 1px solid #ccc; }
+
+.bottom .detial .table th {
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-right: none;
+  font-weight: 500;
+  text-align: center;
+  padding: 0.42667rem 0; }
+
+.bottom .detial .table th:last-child {
+  border-right: 1px solid #ccc; }
+
+.bottom .detial .table td {
+  border: 1px solid #ccc;
+  border-right: none;
+  border-bottom: none;
+  text-align: center;
+  padding: 0.08533rem 0.21333rem; }
+
+.bottom .detial .table td:last-child {
+  border-right: 1px solid #ccc; }
+
+.bottom .detial .table td[rowspan] {
+  border-bottom: 1px solid #ccc; }
 
 .modal {
   width: 100%;

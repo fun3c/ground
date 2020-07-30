@@ -8,7 +8,7 @@ $(function() {
     var $modal = $(".modal"); // 弹层
     var $closeModal = $(".modal").find(".close"); // 关闭弹层按钮
     var $confirm = $("#confirm");
-    var codeResult = {X: 0, y: 0};
+    var codeResult = {X: 0, y: 0, A: 0};
 
 
     var getQuery = function(variable) {
@@ -151,6 +151,7 @@ $(function() {
         $modal.fadeIn(300, function () {
           $("#x").text((codeResult.X || 'x') + "元");
           $("#y").text((codeResult.Y || 'y') + "元");
+          $("#a").text((codeResult.A || "A") + "G");
         });
       }
     });
