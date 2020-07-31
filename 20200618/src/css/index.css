@@ -43,7 +43,8 @@ body {
 .top .head {
   position: absolute;
   left: 0.42667rem;
-  top: 0.42667rem; }
+  top: 0.42667rem;
+  width: 4.26667rem; }
 
 .top .head img {
   max-width: 100%;

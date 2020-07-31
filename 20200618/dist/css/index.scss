@@ -42,6 +42,17 @@ body {
     height: px2rem(544);
     background: url('../img/part1.jpg') no-repeat;
     background-size: 100% auto;
+    position: relative;
+    .head {
+        position: absolute;
+        left: px2rem(10);
+        top: px2rem(10);
+        width: px2rem(100);
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
     .form-warper {
         width : 100%;
         padding-top: px2rem(290);        
@@ -112,7 +123,7 @@ body {
         }
     }
     .detial {
-        width: px2rem(324);
+        width: px2rem(334);
         margin: px2rem(20) auto;
         font-size: px2rem(12);
         background: #250D9B 100%;
@@ -128,6 +139,48 @@ body {
         }
         p {
             padding: 0 px2rem(12) px2rem(20);
+        }
+        .table {
+            width          : 100%;
+            text-align     : left;
+            border-radius  : 2px 2px 0 0;
+            border-collapse: separate;
+            border-spacing : 0;
+            margin-top: px2rem(10);
+            color: #eee;
+            tr {
+                display: table-row;
+                &:last-child {
+                    td {
+                        border-bottom: 1px solid #ccc;
+                    }
+                }
+            }
+            th {
+                border: 1px solid #ccc;
+                border-bottom: none;
+                border-right: none;
+                font-weight: 500;
+                text-align : center;
+                padding: px2rem(10) 0;
+                &:last-child {
+                   border-right: 1px solid #ccc; 
+                   
+                }
+            }
+            td {
+                border: 1px solid #ccc;
+                border-right: none;
+                border-bottom: none;
+                text-align : center;
+                padding: px2rem(2) px2rem(5);
+                &:last-child {
+                    border-right: 1px solid #ccc;
+                }
+                &[rowspan] {
+                    border-bottom:  1px solid #ccc;
+                }
+            }
         }
     }
 }

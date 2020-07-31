@@ -108,79 +108,102 @@ $(function() {
         }, 3000);
       },
     };
-    
-    // 获取验证码
-    $getCode.on("click", function () {
-      if (time.isNot) return;
-      var req = {
-        mobile: phoneNumber.value,
-        originUrl: getQuery("originUrl"),
-      };
-      $.ajax({
-        type: "post",
-        url: reqUrl + "/api/dq/bjph/sendCode",
-        data: req,
-      }).done(function (res) {
-          console.log("res", res);
-          if (res.code === 200) {
-            time.countDown(60);
-            codeResult = res.data;
-            message.show(msgPuop, "验证码已下发");
-          } else {
+
+    // 初始化绑定事件
+    function initCountLog() {
+        // 获取验证码
+        $getCode.on("click", function () {
+        if (time.isNot) return;
+        var req = {
+            mobile: phoneNumber.value,
+            originUrl: getQuery("originUrl"),
+        };
+        $.ajax({
+            type: "post",
+            url: reqUrl + "/api/dq/bjph/sendCode",
+            data: req,
+        })
+            .done(function (res) {
+            console.log("res", res);
+            if (res.code === 200) {
+                time.countDown(60);
+                codeResult = res.data;
+                message.show(msgPuop, "验证码已下发");
+            } else {
+                message.show(msgPuop, res.msg);
+            }
+            })
+            .fail(function (err) {
+            var res = JSON.parse(err.responseText);
+            console.log("err", res);
             message.show(msgPuop, res.msg);
-          }
-        }).fail(function (err) {
-          var res = JSON.parse(err.responseText);
-          console.log("err", res);
-          message.show(msgPuop, res.msg);
+            });
         });
-    });
 
-    // 校验输入
-    var validator = new Validator();
-    $btnSubmit.click(function () {
-      validator.add(phoneNumber, msgPuop, [
-        { strategy: "noEmpty", error: "请输入手机号" },
-        { strategy: "isMobile", error: "手机号码有误，请重新输入" },
-      ]);
-      validator.add(vefCode, msgPuop, [
-        { strategy: "noEmpty", error: "请输入验证码" },
-      ]);
+        // 校验输入
+        var validator = new Validator();
+        $btnSubmit.click(function () {
+        validator.add(phoneNumber, msgPuop, [
+            {
+            strategy: "noEmpty",
+            error: "请输入手机号",
+            },
+            {
+            strategy: "isMobile",
+            error: "手机号码有误，请重新输入",
+            },
+        ]);
+        validator.add(vefCode, msgPuop, [
+            {
+            strategy: "noEmpty",
+            error: "请输入验证码",
+            },
+        ]);
 
-      if (validator.check()) {
-        $modal.fadeIn(300, function () {
-          $("#x").text((codeResult.X || 'x') + "元");
-          $("#y").text((codeResult.Y || 'y') + "元");
-          $("#a").text((codeResult.A || "A") + "G");
+        if (validator.check()) {
+            $modal.fadeIn(300, function () {
+            $("#x").text((codeResult.X || "x") + "元");
+            $("#y").text((codeResult.Y || "y") + "元");
+            $("#a").text((codeResult.A || "A") + "G");
+            });
+        }
         });
-      }
-    });
-    // 提交数据
-    $confirm.on("click", function () {
-      var req = {
-        mobile: phoneNumber.value,
-        validCode: vefCode.value,
-        originUrl: getQuery("originUrl"),
-      };
-      $modal.fadeOut(300);
-      $.ajax({
-        type: "post",
-        url: reqUrl + "/api/dq/bjph/saveOrders",
-        data: req,
-        success: function (res) {
-          console.log("res", res);
-          var msg = res.code === 200 ? '订购成功！会员权益请在北京移动APP内领取' : res.msg;
-          message.show(msgPuop, msg);
-        },
-        error: function (err) {
-          var res = JSON.parse(err.responseText);
-          message.show(msgPuop, res.msg);
-        },
-      });
-    });
-
-    // 关闭弹层
-    $closeModal.on('click', function () {
+        // 提交数据
+        $confirm.on("click", function () {
+        var req = {
+            mobile: phoneNumber.value,
+            validCode: vefCode.value,
+            originUrl: getQuery("originUrl"),
+        };
         $modal.fadeOut(300);
+        $.ajax({
+            type: "post",
+            url: reqUrl + "/api/dq/bjph/saveOrders",
+            data: req,
+            success: function (res) {
+            console.log("res", res);
+            var msg =
+                res.code === 200
+                ? "订购成功！会员权益请在北京移动APP内领取"
+                : res.msg;
+            message.show(msgPuop, msg);
+            },
+            error: function (err) {
+            var res = JSON.parse(err.responseText);
+            message.show(msgPuop, res.msg);
+            },
+        });
+        });
+        // 关闭弹层
+        $closeModal.on("click", function () {
+        $modal.fadeOut(300);
+        });
+    }
+
+    countLog.ready(function () {
+      countLog.init(initCountLog, {
+        isCopy: 0,
+        pageType: 0,
+      });
     });
 })
