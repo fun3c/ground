@@ -37,6 +37,7 @@ input, button, select, textarea {
 	width:100%;
 	margin:0;	
 	padding:0;
+	overflow: hidden;
 }
 .gray-bg {
     background: #f1f1f1;
@@ -686,7 +687,7 @@ section.hero-text h1{
 }
  
 .box {
-	width: 100%;
+	/* width: 100%; */
 }
 .box-gray  {
 	background: #f8f8f8;
