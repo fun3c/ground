@@ -20,6 +20,9 @@ jQuery(document).ready(function($) {
 		
 		e.preventDefault();
 	});
+	$('.close-btn').on('click', function () {
+		$('#login-layer').fadeOut(400);
+	})
 	$('#agree .btn-primary').on('click', function() {
 		$('#agree').fadeOut(400);
 		$('#login-layer').fadeOut(400);
