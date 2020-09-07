@@ -121,12 +121,12 @@ header .navbar {
 .navbar-brand {
     color: #222;
     text-transform: uppercase;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1em;
-    letter-spacing: -1px;
-    margin-top: 10px;
-    padding: 0;
+    margin-top: -10px;
+	padding: 0;
+	display:  block;
+}
+.navbar-brand > img {
+	width: 140px;
 }
 .navbar-default .navbar-brand{
 color: #1891EC;
@@ -346,6 +346,98 @@ border: 1px solid #5384ed;
 	
 color: #fff;
 }
+
+/* login layer */
+#isLogin {
+	display: none;
+}
+.login-layer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .15);
+	display: none;
+}
+.login-layer .login-box {
+	width: 380px;
+	min-height: 278px;
+	background-color: #fff;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 1010;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+ .login-box .close-btn {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+.login-box .content {
+	padding: 20px;
+	min-height: 10px;
+	text-align: center;
+}
+.login-box .content .title {
+	text-align: center;
+	padding: 50px 0 0 0;
+	font: 24px bold;
+}
+.login-box .content .sub-tit {
+	font-size: 12px;
+}
+.login-box .foot {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.login-box .foot .login-btn {
+	width: 80%;
+}
+.login-box .foot .agree {
+	padding: 10px 30px;
+}
+.agree-title {
+	text-align: center;
+	font-size: 16px;
+	padding: 20px 0;
+	color: #333;
+	font-weight: bold;
+}
+.agree-content {
+	text-align: left;
+	padding: 0 20px 10px;
+}
+.agree-content p {
+	text-align: left;
+}
+.agree-foot {
+	margin: 10px 0 20px;
+	text-align: center;
+}
+.agree-foot .btn {
+	padding: 6px 16px;
+	margin: 0 20px;
+}
+.agree-foot .btn-default {
+	color           : #333;
+	background-color: #fff;
+	border-color    : #ccc;
+}
+.agree-foot .btn-default:hover {
+	color           : #333;
+	background-color: #e6e6e6;
+	border-color    : #adadad;
+}
+.agree-content .bold {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
 #banner{
 	width: 100%;
 	background:#000;
@@ -878,7 +970,13 @@ section.section-padding.gray-bg {
 
 
 }
-  #accordion-alt3 .panel-heading h4 {font-size: 14px;color: #FFF;text-decoration: none;\: 700;padding: 0 !important;background: transparent;}
+#accordion-alt3 .panel-heading h4 {
+	font-size: 14px;
+	color: #FFF;
+	text-decoration: none;
+	padding: 0 !important;
+	background: transparent;
+}
 .panel .panel-heading h4 {
 font-weight: 400;
 }

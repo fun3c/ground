@@ -2,7 +2,34 @@
 jQuery(document).ready(function($) {
 "use strict";
 
-	
+	// login
+	$('#login > a').on('click', function (e) {
+		$('#login-layer').fadeIn(400);
+		e.preventDefault();
+	});
+	$('#login-layer .login-btn').on('click', function (e) {
+		var $agreeCheckbox = $('#agree-checkbox');
+		if (!$agreeCheckbox.attr('checked')) {
+			$('#login-layer').fadeOut(400);
+			$('#agree').fadeIn(400);
+		} else {
+			$('#login').fadeOut(200);
+			$('#isLogin').fadeIn(200);
+			$('#login-layer').fadeOut(400);
+		}
+		
+		e.preventDefault();
+	});
+	$('#agree .btn-primary').on('click', function() {
+		$('#agree').fadeOut(400);
+		$('#login-layer').fadeOut(400);
+		$('#login').fadeOut(200);
+		$('#isLogin').fadeIn(200);
+	})
+	$('#agree .btn-default').on('click', function () {
+		$('#agree').fadeOut(400);
+		$('#login-layer').fadeOut(400);
+	})
 		//add some elements with animate effect
 
 		$(".big-cta").hover(
