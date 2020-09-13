@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>关于我们-酉十六科技</title>
+    <title>联系我们-酉十六科技</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
@@ -17,7 +17,34 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <style type="text/css">
+        .back {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 9500;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: .5;
+        }
 
+        .my_box {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 80px;
+            z-index: 9501;
+            width: 500px;
+            margin-left: -250px;
+        }
+
+        .my_box img {
+            display: block;
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -52,7 +79,7 @@
                                 <li><a href="yysjzxs.html">运营商精准线索</a></li>
                                 <li><a href="anli.html">行业案例</a></li>
                                 <li><a href="services.html">产品与服务</a></li>
-                            <li class="active"> <a href="about.html">关于我们 </a></li>
+                            <li> <a href="about.html">关于我们 </a></li>
                             <!-- <ul class="dropdown-menu">
                             <li><a href="about.html">Our Company</a></li>
                             <li><a href="#">Our Team</a></li>
@@ -61,7 +88,7 @@
                         </ul>
                     -->
                             <!-- </li> -->
-                            <li><a href="news.html">资讯专区（收费）</a></li>
+                            <li class="active"><a href="news.html">资讯专区（收费）</a></li>
                             <li><a href="contact.html">联系我们</a></li>
                             <li id="login"><a href="#">登录</a></li>
                             <li id="isLogin">
@@ -78,173 +105,44 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2 class="pageTitle">酉十六科技简介</h2>
+                        <h2 class="pageTitle">资讯专区</h2>
                     </div>
                 </div>
             </div>
         </section>
         <section id="content">
-            <!-- <div class="container">
-                <div class="row showcase-section">
-                    <div class="col-md-6">
-                        <img src="src/img/companyintro.png" alt="showcase image">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="about-text">
-                            <h3>企业定位</h3>
-                            <p>北京酉十六科技有限责任公司是一家大数据挖掘及应用的技术和服务提供商。公司成立于二零一九年八月九日，注册资金200万元，现有团队近50人。创始人及公司核心人员均来自通信（运营商）、移动互联网和大数据领域的头部公司，并在本行业深耕多年。</p>
 
-                        </div>
-                    </div>
-                </div>
-            </div> -->
             <div class="container">
 
-                <div class="about">
-
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <!-- Heading and para -->
-                            <div class="block-heading-two">
-                                <h3><span>团队简介</span></h3>
-                            </div>
-                            <p>北京酉十六科技有限责任公司是一家大数据挖掘及应用的技术和服务提供商。公司成立于二零一九年，注册资金200万元，现有团队近50人。创始人及公司核心人员均来自通信（运营商）、移动互联网和大数据领域的头部公司，并在本行业深耕多年。</p>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="block-heading-two">
-                                <h3><span>产品与服务</span></h3>
-                            </div>
-                            <!-- Accordion starts -->
-                            <div class="panel-group" id="accordion-alt3">
-                                <!-- Panel. Use "panel-XXX" class for different colors. Replace "XXX" with color. -->
-                                <div class="panel panel2">
-                                    <!-- Panel heading -->
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion-alt3"
-                                                href="#collapseOne-alt3">
-                                                <i class="fa fa-angle-right"></i> 大数据底层架构能力
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne-alt3" class="panel-collapse collapse">
-                                        <!-- Panel body -->
-                                        <div class="panel-body">
-                                            我们拥有强大的底层大数据平台能力，可处理P级数据处理任务。拥有基于Hadoop生态自我搭建的大数据平台，包含了MapReduce、HIVE、PIG、Spark等技术，可提供强大稳定的数据批处理能力。
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel2">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion-alt3"
-                                                href="#collapseTwo-alt3">
-                                                <i class="fa fa-angle-right"></i> 数据建模能力
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo-alt3" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            公司拥有面向多行业、多数据类型的营销模型及风控模型。营销模型主要是基于运营商dpi数据构建面向教育、汽车、金融等行业的数据模型，为上述行业中企业提供高效的潜在精准受众。
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel2">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion-alt3"
-                                                href="#collapseThree-alt3">
-                                                <i class="fa fa-angle-right"></i>行业SaaS产品能力
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseThree-alt3" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            公司拥有众多企业SaaS产品，如大数据精准营销平台、失联修复平台、DMP平台、风控API平台、小熊上课等多行业的SaaS平台，构建起从数据挖掘、用户画像、营销触达及营销效果分析的全业务流程产品生态。
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel2">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion-alt3"
-                                                href="#collapseFour-alt3">
-                                                <i class="fa fa-angle-right"></i> 行业解决方案能力
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseFour-alt3" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            公司可以面向众多行业输出底层大数据能力、用户画像能力、营销触达能力（短信、呼叫、闪信等），结合企业的应用场景提供定制化的产品与行业解决方案服务。
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Accordion ends -->
-
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="block-heading-two">
-                                <h3><span>我们的专业能力</span></h3>
-                            </div>
-                            <h6>大数据底层建设能力</h6>
-                            <div class="progress pb-sm">
-                                <!-- White color (progress-bar-white) -->
-                                <div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="40"
-                                    aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                    <span class="sr-only">40% Complete (success)</span>
-                                </div>
-                            </div>
-                            <h6>数据建模能力</h6>
-                            <div class="progress pb-sm">
-                                <div class="progress-bar progress-bar-green" role="progressbar" aria-valuenow="60"
-                                    aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                                    <span class="sr-only">40% Complete (success)</span>
-                                </div>
-                            </div>
-                            <h6>行业SaaS产品能力</h6>
-                            <div class="progress pb-sm">
-                                <div class="progress-bar progress-bar-lblue" role="progressbar" aria-valuenow="80"
-                                    aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                                    <span class="sr-only">40% Complete (success)</span>
-                                </div>
-                            </div>
-                            <h6>行业解决方案能力</h6>
-                            <div class="progress pb-sm">
-                                <div class="progress-bar progress-bar-yellow" role="progressbar" aria-valuenow="30"
-                                    aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                    <span class="sr-only">40% Complete (success)</span>
-                                </div>
-                            </div>
-                        </div>
-
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft animated"
+                        data-wow-animation-name="fadeInLeft">
+                        <img src="src/img/reportspay.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 wow fadeInRight animated" data-wow-animation-name="fadeInRight">
+                        <h2>
+                            移动互联网用户内容偏好报告
+                        </h2>
+                        <hr>
+                        <p>
+                            这是一份关于2018年中国移动互联网用户行为的洞察报告，对包括iOS和安卓用户在内的中国移动互联网用户整体，进行了人群画像的最新描摹和消费行为变化的深度洞察。
+                        </p>
+                        <p>
+                            该报告共分为“中国移动互联网用户人群特征画像”、“中国移动互联网用户消费行为分析”、“中国移动互联网用户APP使用行为分析。
+                        </p>
+                        <a href="javascript:;" class="lineBtn" id="payBtn">
+                            付费查看
+                        </a>
                     </div>
 
 
-
-                    <br>
-
-                    <!-- Our Team starts -->
-
-                    <!-- Heading -->
-                    <!--
-						<div class="block-heading-six">
-							<h3>Our Team</h3>
-						</div>
-						<br>
-					-->
-
-                    <!-- Our team starts -->
-
-
-                    <!-- Our team ends -->
-
-
                 </div>
-
+                <div class="back"></div>
+                <div class="my_box" style="text-align:center; vertical-align:middle;">
+                    <img style="text-align:center; vertical-align:middle;width:400px;" src="src/img/scan.png" alt="">
+                </div>
             </div>
+
         </section>
 
         <footer>
@@ -316,7 +214,6 @@
             </div>
         </footer>
     </div>
-
     <div class="login-layer" id="login-layer">
         <div class="login-box">
             <div class="close-btn">
@@ -367,6 +264,19 @@
     <script src="src/js/jquery.magnific-popup.min.js"></script>
     <script src="src/js/animate.js"></script>
     <script src="src/js/custom.js"></script>
+
+    <script src="contact/jqBootstrapValidation.js"></script>
+    <script src="contact/contact_me.js"></script>
+    <script type="text/javascript">
+        $('#payBtn').click(function () {
+            $('.back').show();
+            $('.my_box').show();
+        })
+        $('.back').click(function () {
+            $('.back').hide();
+            $('.my_box').hide();
+        })
+    </script>
 </body>
 
 </html>
