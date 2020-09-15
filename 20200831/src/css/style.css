@@ -348,6 +348,10 @@ border: 1px solid #5384ed;
 color: #fff;
 }
 
+#login,
+#isLogin {
+	margin-right: 30px;
+}
 /* login layer */
 #isLogin {
 	display: none;

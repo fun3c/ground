@@ -1,10 +1,26 @@
 /*global jQuery:false */
 jQuery(document).ready(function($) {
 "use strict";
+	// get phone
+	var resData = { code: "success", telephone: "1388****1388", userId: ""}; 
+	_udata.getTelephone(function (res) {  // res={code:"success",telephone:"",userId:""}
+		console.log("取号结果：", res); 
+		resData = res; 
+	}); 
+	
+	function setPhone(code, $el) {
+		if (code === 'success') {
+			$el.html(resData.telephone)
+		} else {
+			// fix
+		}
+	}
 
 	// login
 	$('#login > a').on('click', function (e) {
 		$('#login-layer').fadeIn(400);
+		setPhone(resData.code, $('#login-layer').find('.title'))
+		
 		e.preventDefault();
 	});
 	$('#login-layer .login-btn').on('click', function (e) {
@@ -28,6 +44,7 @@ jQuery(document).ready(function($) {
 		$('#login-layer').fadeOut(400);
 		$('#login').fadeOut(200);
 		$('#isLogin').fadeIn(200);
+		setPhone(resData.code, $('#isLogin').find('.phone-number'))
 	})
 	$('#agree .btn-default').on('click', function () {
 		$('#agree').fadeOut(400);
