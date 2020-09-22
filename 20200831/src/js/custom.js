@@ -1,13 +1,30 @@
 /*global jQuery:false */
 jQuery(document).ready(function($) {
 "use strict";
-	// get phone
 	var resData = { code: "success", telephone: "1388****1388", userId: ""}; 
-	_udata.getTelephone(function (res) {  // res={code:"success",telephone:"",userId:""}
-		console.log("取号结果：", res); 
-		resData = res; 
-	}); 
+	// get phone
+	function getTelephone() {
+		if (window.Promise) {
+			return new Promise(function (resolve, reject) {
+				_udata.getTelephone(function (res) {  // res={code:"success",telephone:"",userId:""}
+					console.log("取号结果：", res);
+					resData = res;
+					resolve(resData);
+				});
+			})
+		} else {
+			return {
+				then: function(callback) {
+					_udata.getTelephone(function (res) {
+						resData = res;
+						callback(resData);
+					})
+				}
+			}
+		}
+	}
 	
+	// set phone
 	function setPhone(code, $el) {
 		if (code === 'success') {
 			$el.html(resData.telephone)
@@ -15,41 +32,64 @@ jQuery(document).ready(function($) {
 			// fix
 		}
 	}
+	var delay1 = 400;
+	var delay2 = 200;
 
 	// login
+	// 头部登录按钮
 	$('#login > a').on('click', function (e) {
-		$('#login-layer').fadeIn(400);
-		setPhone(resData.code, $('#login-layer').find('.title'))
-		
+		$('#login-layer').fadeIn(delay1);
+		// setPhone(resData.code, $('#login-layer').find('.title'))
 		e.preventDefault();
 	});
+	// 一键登录
 	$('#login-layer .login-btn').on('click', function (e) {
-		var $agreeCheckbox = $('#agree-checkbox');
-		if (!$agreeCheckbox.attr('checked')) {
-			$('#login-layer').fadeOut(400);
-			$('#agree').fadeIn(400);
-		} else {
-			$('#login').fadeOut(200);
-			$('#isLogin').fadeIn(200);
-			$('#login-layer').fadeOut(400);
-		}
-		
+		// var $agreeCheckbox = $('#agree-checkbox');
+		$('#login-layer').fadeOut(delay1);
+		$('#agree').fadeIn(delay1);
+		// if (!$agreeCheckbox.attr('checked')) {
+		// 	$('#login-layer').fadeOut(delay1);
+		// 	$('#agree').fadeIn(delay1);
+		// } else {
+		// 	$('#login').fadeOut(delay2);
+		// 	// $('#isLogin').show();
+		// 	$('#login-layer').fadeOut(delay1);
+		// }
 		e.preventDefault();
 	});
-	$('.close-btn').on('click', function () {
-		$('#login-layer').fadeOut(400);
-	})
+	// 关闭
+	$('#login-layer .close-btn').on('click', function () {
+		$('#login-layer').fadeOut(delay1);
+	});
+	$('#agree .close-btn').on('click', function () {
+		$('#login-layer').fadeIn(delay2);
+		$('#agree').fadeOut(delay1);
+	});
+	// 用户协议等链接
+	$('.agree').find('a').on('click', function(e) {
+		var text = $(this).text();
+		$('.agree-title').text(text);
+		$('#agree').fadeIn(delay1);
+		$('.agree-foot').hide();
+		e.preventDefault();
+	});
+	// 同意
 	$('#agree .btn-primary').on('click', function() {
-		$('#agree').fadeOut(400);
-		$('#login-layer').fadeOut(400);
-		$('#login').fadeOut(200);
-		$('#isLogin').fadeIn(200);
-		setPhone(resData.code, $('#isLogin').find('.phone-number'))
+		$('#agree').fadeOut(delay1);
+		$('#login-layer').fadeOut(delay1);
+		$('#login').fadeOut(delay2);
+		$('#isLogin').show();
+		getTelephone().then(function (res) {
+			setPhone(res.code, $('#isLogin').find('.phone-number'))
+		});
 	})
+	// 不同意
 	$('#agree .btn-default').on('click', function () {
-		$('#agree').fadeOut(400);
-		$('#login-layer').fadeOut(400);
+		$('#agree').fadeOut(delay1);
+		$('#login-layer').fadeOut(delay1);
 	})
+
+
 		//add some elements with animate effect
 
 		$(".big-cta").hover(

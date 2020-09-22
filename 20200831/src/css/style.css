@@ -348,13 +348,22 @@ border: 1px solid #5384ed;
 color: #fff;
 }
 
-#login,
-#isLogin {
-	margin-right: 30px;
+.login-box {
+	position: absolute;
+	top     : 15px;
+	right   : 100px;
+}
+#login {
+	font-size: 12px;
+	font-weight: bold;
 }
 /* login layer */
 #isLogin {
 	display: none;
+	color: #666;
+	font-size: 12px;
+	font-weight: bold;
+
 }
 .login-layer {
 	position: fixed;
@@ -1836,8 +1845,12 @@ padding-top: 3px;
 		height:20px;
 		font-size:14px;
 	}
-
-
+	.navbar-brand>img {
+		width: 100px;
+	}
+	.login-layer .login-box {
+		width: 300px;
+	}
 }
 
  
